@@ -1,0 +1,15 @@
+// rate 16.78 for 40 hr 
+// over 40 is * 1.5
+// 0.06% ssTax
+// 0.14% federalTax
+// 0.05 stateTax
+// $10 dues 
+// $35 for 3 or more dependants
+
+const float SSTAX = 0.06;
+  const float FEDTAX = 0.14;
+  const float STATETAX = 0.05;
+  const float DUES = 10;
+  const float DEPEND = 35;
+  rate = 16.78;
+  overtimeRate = 1.5;
