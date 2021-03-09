@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-int changeChar()
+void changeChar()
 {
   char c;
   cout << "char default value is: " << c << '\n';
@@ -15,5 +15,4 @@ int changeChar()
   cout << c << '\n';
   cout << ' ' << c << '   ' << c << '\n';
   cout << '  ' << c << ' ' << c << ' ' << c << '\n';
-  return
 }
