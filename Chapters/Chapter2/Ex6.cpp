@@ -1,9 +1,9 @@
 
 #include <iostream>
 using namespace std;
-int main()
-{
-  double hours, dependants, rate, overtimeRate, grossPay, netPay, withheldAmount;
+int main() {
+  double hours, dependants, rate, overtimeRate, grossPay, netPay,
+      withheldAmount;
 
   const float SSTAX = 0.06;
   const float FEDTAX = 0.14;
@@ -18,21 +18,15 @@ int main()
   cout << "Enter number of dependants: \n";
   cin >> dependants;
 
-  if (hours <= 40)
-  {
+  if (hours <= 40) {
     grossPay = hours * rate;
-  }
-  else
-  {
-    grossPay = hours * (rate * 1.5);
+  } else {
+    grossPay = (hours * rate) + ((hours - 40) * (rate * overtimeRate));
   }
 
-  if (dependants >= 3)
-  {
+  if (dependants >= 3) {
     withheldAmount = grossPay - DEPEND;
-  }
-  else
-  {
+  } else {
     withheldAmount = grossPay;
   }
   netPay = grossPay - (grossPay * (SSTAX + FEDTAX + STATETAX));
@@ -40,6 +34,6 @@ int main()
 
   cout << "Based on " << hours << "hrs. " << endl;
   cout << "The gross pay is " << grossPay << endl;
-  cout << "The amount before health insurance is " << withheldAmount << endl;
+  cout << "The amount after health insurance is " << withheldAmount << endl;
   cout << "The net pay is " << netPay << endl;
 }

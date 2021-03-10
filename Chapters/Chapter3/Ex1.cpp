@@ -1,5 +1,3 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-}
+// int main() { rock > scissors scissors > paper paper > rock }
