@@ -1,3 +1,9 @@
 #include <iostream>
 using namespace std;
-// int main() { rock > scissors scissors > paper paper > rock }
+int main() {
+  double player1, player2, rock, paper, scissors;
+
+  rock > scissors;
+  scissors > paper;
+  paper > rock;
+}
