@@ -4,9 +4,15 @@
 #include <cmath>
 #include <iostream>
 using namespace std;
-int main(){
-    double buoyantForce, volumeObject, weighFluid,
+int main() {
+  char ans;
+  do {
+    double buoyantForce, volumeObject, weighFluid;
     // if (buoyantForce =>){
 
-};
+    cout << "Do you want to begin again?";
+    cin >> ans;
+  } while (ans == 'y' || ans == 'Y');
+  cout << "Have a nice day. \n";
+  return 0;
 }

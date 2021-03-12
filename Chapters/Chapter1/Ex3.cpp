@@ -1,8 +1,10 @@
 #include <iostream>
 using namespace std;
-int main()
-{
-  double numberOfQuarters, numberOfDimes, NumberOfNickels, amountQ, amountD, amountN, sum;
+int main() {
+  double numberOfQuarters, numberOfDimes, NumberOfNickels, amountQ, amountD,
+      amountN, sum;
+  cout.setf(ios::fixed);
+  cout.precision(2);
   cout << "Press return after entering a number. \n";
   cout << "Enter the number of quarters: \n";
   cin >> numberOfQuarters;
@@ -17,7 +19,7 @@ int main()
   sum = amountQ + amountD + amountN;
 
   cout << "The total for all the coins is ";
-  cout << "$ ";
+  cout << "$";
   cout << sum;
   return 0;
 }

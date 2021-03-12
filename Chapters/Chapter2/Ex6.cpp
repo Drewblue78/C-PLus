@@ -10,7 +10,7 @@ int main() {
   const float STATETAX = 0.05;
   const float DUES = 10;
   const float DEPEND = 35;
-  rate = 16.78;
+  const float RATE = 16.78;
   overtimeRate = 1.5;
   cout << "Press return after entering a number. \n";
   cout << "Enter the number of hours worked: \n";
@@ -21,7 +21,7 @@ int main() {
   if (hours <= 40) {
     grossPay = hours * rate;
   } else {
-    grossPay = (hours * rate) + ((hours - 40) * (rate * overtimeRate));
+    grossPay = (40 * rate) + ((hours - 40) * (rate * overtimeRate));
   }
 
   if (dependants >= 3) {

@@ -1,21 +1,20 @@
 #include <iostream>
 using namespace std;
-int main()
-{
+int main() {
   char ans;
-  do
-  {
-    float annualSalary, newAnnualSalary, newMonthlySalary, amountDue, numberOfMonths;
+  do {
+    double annualSalary, newAnnualSalary, monthlySalary, newMonthlySalary,
+        amountDue, numberOfMonths;
     const float RAISE = 0.076;
-    const float MONTHLYSALARY = annualSalary / 12;
     cout << "Press return after entering a number. \n";
     cout << "Enter the annual salary: \n";
     cin >> annualSalary;
     cout << "Enter how many months: \n";
     cin >> numberOfMonths;
+    monthlySalary = annualSalary / 12;
     newAnnualSalary = annualSalary * RAISE + annualSalary;
     newMonthlySalary = newAnnualSalary / 12;
-    amountDue = numberOfMonths * newMonthlySalary - MONTHLYSALARY;
+    amountDue = numberOfMonths * (newMonthlySalary - monthlySalary);
 
     cout << "The amount due is: ";
     cout << "$";
