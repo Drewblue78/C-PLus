@@ -4,7 +4,7 @@ using namespace std;
 
 void giveMetric();
 void inputMetric(double& meters, double& cm);
-void calcToImperial(double& meters, double& cm, double& ft, double& in,
+void calcToImperial(double meters, double cm, double& ft, double& in,
                     double& length);
 void outputImperial(double& ft, double& in, double& meters, double& cm,
                     double& length);
@@ -29,14 +29,15 @@ void inputMetric(double& meters, double& cm) {
   cout << "Centimeters: ";
   cin >> cm;
 }
-void calcToImperial(double& meters, double& cm, double& ft, double& in,
+void calcToImperial(double meters, double cm, double& ft, double& in,
                     double& length) {
-  length = meters + cm;
-  ft = length / 0.3048;
+  length = (meters + (cm / 100)) / 0.3048;
+  ft = meters / 0.3048;
   in = ft / 12;
+  cm = 10 * ((length - meters) * 12);
 }
 void outputImperial(double& meters, double& cm, double& ft, double& in,
                     double& length) {
-  cout << ft << "m " << in << "cm is equivalent to " << (floor(meters))
-       << " feet " << (length - meters) << " inches." << endl;
+  cout << ft << "m " << in << "cm is equivalent to " << floor(length)
+       << " feet " << cm << " inches." << endl;
 }
