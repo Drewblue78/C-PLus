@@ -1,5 +1,3 @@
-#include <math.h>
-
 #include <cmath>
 #include <iostream>
 using namespace std;
@@ -30,14 +28,10 @@ void inputImperial(double& ft, double& in) {
   cin >> in;
 }
 void calcToMetric(double& ft, double& in, double& meters, double& cm) {
-  meters = % .1lf, floor(ft + (in / 12.0)) * 0.3048;
+  meters = (ft + (in / 12.0)) * 0.3048;
   cm = (meters * 100) - 100;
-  // meters = ft * 0.3048;
-  // cm = in * 2.54;
 }
 void outputMetric(double& ft, double& in, double& meters, double& cm) {
   cout << meters << " feet " << cm << " inches is equivalent to " << (floor(ft))
-       << " meters " << in << " centimeters" << endl;
+       << "m " << (floor(in)) << "cm." << endl;
 }
-// format, 2.3,round( 2.3),floor( 2.3),ceil( 2.3),trunc( 2.3));
-// % .1lf\n ", floor (3.8)

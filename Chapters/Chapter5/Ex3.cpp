@@ -2,34 +2,41 @@
 #include <iostream>
 using namespace std;
 
-void inputMetric(double meters, double cm);
-void calc(double meters, double cm, double ft, double in);
-void outputImperial(double ft, double in, double meters, double cm);
+void giveMetric();
+void inputMetric(double& meters, double& cm);
+void calcToImperial(double& meters, double& cm, double& ft, double& in,
+                    double& length);
+void outputImperial(double& ft, double& in, double& meters, double& cm,
+                    double& length);
 
-int main() {
-  int giveMetric() {
-    double meters, cm, ft, in;
-    char ans;
-    do {
-      cout << " Meters and centimeters to feet and inches " << endl;
-      inputMetric(meters, cm);
-      calc(meters, cm, ft, in);
-      outputImperial(ft, in, meters, cm);
-      cout << "Do you want to begin again?" << endl;
-      cin >> ans;
-    } while (ans == 'y' || ans == 'Y');
-    cout << "Have a nice day. \n";
-    return 0;
-  }
-  void inputMetric(double meters, double cm) {
-    cout << "Meters: ";
-    cin >> meters;
-    cout << "Centimeters: ";
-    cin >> cm;
-  }
-  void calc(double meters, double cm, double ft, double in) {}
-  void outputImperial(double ft, double in, double meters, double cm) {
-    cout << meters << " meters " << cm << " centimeters is equivalent to " << ft
-         << " feet " << in << " inches" << endl;
-  }
+int main() { giveMetric(); }
+void giveMetric() {
+  double meters, cm, ft, in, length;
+  char ans;
+  do {
+    cout << "Meters and centimeters to feet and inches " << endl;
+    inputMetric(meters, cm);
+    calcToImperial(meters, cm, ft, in, length);
+    outputImperial(ft, in, meters, cm, length);
+    cout << "Do you want to begin again?" << endl;
+    cin >> ans;
+  } while (ans == 'y' || ans == 'Y');
+  cout << "Have a nice day. \n";
+}
+void inputMetric(double& meters, double& cm) {
+  cout << "Meters: ";
+  cin >> meters;
+  cout << "Centimeters: ";
+  cin >> cm;
+}
+void calcToImperial(double& meters, double& cm, double& ft, double& in,
+                    double& length) {
+  length = meters + cm;
+  ft = length / 0.3048;
+  in = ft / 12;
+}
+void outputImperial(double& meters, double& cm, double& ft, double& in,
+                    double& length) {
+  cout << ft << "m " << in << "cm is equivalent to " << (floor(meters))
+       << " feet " << (length - meters) << " inches." << endl;
 }
