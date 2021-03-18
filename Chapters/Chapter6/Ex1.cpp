@@ -7,47 +7,25 @@ void readFile();
 
 int main() { readFile(); }
 
-void readFile();
-ifstream inStream;
-ofstream outStream;
+void readFile() {
+  ifstream numFileStream;
 
-inStream.open("NumberFile.txt");
-int big, small;
-inStream >> big >> small;
-cout << "The largst number is" << big << endl;
-cout << "The smallest number is" << small << endl;
-
-inStream.close();
-return 0;
-}
-
-void fileReader() {
-  ifstream fin;
-  fin.open("ImportantFile.txt");
-  string readIn;
-  while (fin >> readIn) {
-    cout << "_" << readIn << "_" << endl;
+  numFileStream.open("Chapters/Chapter6/NumberFile.txt");
+  int big, small;
+  numFileStream >> big >> small;
+  if (big < small) {
+    int tmp = big;
+    big = small;
+    small = tmp;
   }
-}
+  while (!numFileStream.eof()) {
+    int num;
+    numFileStream >> num;
+    if (num > big) big = num;
+    if (num < small) small = num;
+  }
+  cout << "The largest number is " << big << endl;
+  cout << "The smallest number is " << small << endl;
 
-// void fileReaderOrFail() {
-//   ifstream fin;
-//   fin.open("numberFile.txt");
-//   if (fin.fail()) {
-//     cout << "File not found";
-//     exit(1);
-//   } else {
-//     string readIn;
-//     while (fin >> readIn) {
-//       cout << "_" << readIn << "_" << endl;
-//     }
-//   }
-// }
-// void readFile() {
-//   ifstream fin;
-//   fin.open("NumberFile.txt");
-//   string readIn;
-//   while (fin >> readIn) {
-//     cout << "_" << readIn << "_" << endl;
-//   }
-// }
+  numFileStream.close();
+}
