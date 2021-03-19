@@ -24,9 +24,9 @@ int main() {
 int firstLast2(int arr[], int n) {
   if (arr[0] == 2 || arr[n - 1] == 2) {
     cout << "True";
-  }
-
-  else {
+    return true;
+  } else {
     cout << "False";
+    return false;
   }
 }
