@@ -7,6 +7,7 @@ int search(const int a[], int target);
 
 int main() {
   int arr[DECLARED_SIZE], listSize, target;
+  //
   countNum2(arr, DECLARED_SIZE, listSize, amount);
 
   char ans;
